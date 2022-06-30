@@ -1,8 +1,8 @@
 package org.casaortiz.dao.implementations;
 
 import org.casaortiz.db.ConnectionDB;
-import org.casaortiz.db.ConnectionDBMySQL;
 import org.casaortiz.dao.agreement.CategoryDao;
+import org.casaortiz.db.Database;
 import org.casaortiz.model.Category;
 
 import java.sql.Connection;
@@ -24,7 +24,7 @@ public class CategoryDaoImpl implements CategoryDao {
     private final ConnectionDB connectionDB;
 
     public CategoryDaoImpl() {
-        connectionDB = new ConnectionDBMySQL();
+        connectionDB = Database.typeDatabase();
     }
 
     @Override
